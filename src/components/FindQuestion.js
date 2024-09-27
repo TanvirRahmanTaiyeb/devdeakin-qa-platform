@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import './FindQuestion.css'; // Custom styles
+import './FindQuestion.css'; // Importing the updated styles
 
 const FindQuestion = () => {
   const [questions, setQuestions] = useState([]);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [filters, setFilters] = useState({ title: '', tag: '', date: '' });
 
-  // Fetch questions from Firestore
+  // Fetching questions from Firestore
   useEffect(() => {
     const fetchQuestions = async () => {
       const qCollection = collection(db, 'questions');
@@ -24,14 +23,14 @@ const FindQuestion = () => {
     fetchQuestions();
   }, []);
 
-  // Handle filter changes
+  // Handling filter changes
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
     applyFilters({ ...filters, [name]: value });
   };
 
-  // Apply filters
+  // Applying filters
   const applyFilters = (filterCriteria) => {
     const { title, tag, date } = filterCriteria;
     let updatedQuestions = questions;
@@ -55,22 +54,11 @@ const FindQuestion = () => {
     setFilteredQuestions(updatedQuestions);
   };
 
-  // Handle hide question
+  // Handling hide question
   const handleHideQuestion = (id) => {
     setFilteredQuestions((prevQuestions) =>
       prevQuestions.filter((q) => q.id !== id)
     );
-  };
-
-  // Handle drag-and-drop reordering
-  const handleDragEnd = (result) => {
-    if (!result.destination) return;
-
-    const reorderedQuestions = Array.from(filteredQuestions);
-    const [removed] = reorderedQuestions.splice(result.source.index, 1);
-    reorderedQuestions.splice(result.destination.index, 0, removed);
-
-    setFilteredQuestions(reorderedQuestions);
   };
 
   return (
@@ -101,36 +89,15 @@ const FindQuestion = () => {
         />
       </div>
 
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="questions">
-          {(provided) => (
-            <div
-              className="question-list"
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {filteredQuestions.map((question, index) => (
-                <Draggable key={question.id} draggableId={question.id} index={index}>
-                  {(provided) => (
-                    <div
-                      className="question-card"
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <QuestionCard
-                        question={question}
-                        onHide={() => handleHideQuestion(question.id)}
-                      />
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <div className="question-list">
+        {filteredQuestions.map((question) => (
+          <QuestionCard
+            key={question.id}
+            question={question}
+            onHide={() => handleHideQuestion(question.id)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
