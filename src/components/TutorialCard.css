@@ -1,0 +1,26 @@
+.tutorial-card {
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .tutorial-card .content {
+    flex-grow: 1;
+  }
+  
+  .tutorial-card .image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .tutorial-card .image img {
+    width: 100%;
+    height: auto;
+  }
+  

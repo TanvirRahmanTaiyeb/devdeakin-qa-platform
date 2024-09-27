@@ -1,0 +1,26 @@
+.article-card {
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .article-card .content {
+    flex-grow: 1;
+  }
+  
+  .article-card .image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .article-card .image img {
+    width: 100%;
+    height: auto;
+  }
+  

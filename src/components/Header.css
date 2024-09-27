@@ -1,0 +1,34 @@
+.header-link {
+  color: #333; /* Default color for all links */
+  text-decoration: none; /* Remove the default underline */
+}
+
+.header-link:hover {
+  color: #007bff; /* Blue color on hover */
+  text-decoration: none; /* Keep the underline removed */
+}
+
+.header-menu {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.menu-item.logo:hover {
+  color: #007bff;
+}
+
+.menu-right {
+  margin-right: 20px;
+}
+
+.menu-right .menu-item {
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}

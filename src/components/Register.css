@@ -1,0 +1,76 @@
+.auth-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f1f3f5; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.auth-form h2 {
+  text-align: center;
+  color: #495057; 
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ced4da; 
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease; 
+}
+
+.auth-form input:focus {
+  border-color: #007bff; /* Focuseing input border */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+}
+
+.auth-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #0056b3;
+}
+
+.auth-form p {
+  color: #dc3545; /* Slightly darker red for error messages */
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Link to Login page if already registered */
+.auth-form .login-link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.auth-form .login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-form .login-link a:hover {
+  text-decoration: underline;
+}

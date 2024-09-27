@@ -1,0 +1,116 @@
+/* FindQuestion.css */
+
+/* Styling for the question page */
+.find-question-page {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filters input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30%;
+  }
+  
+  .question-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .question-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .question-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .question-header {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Ensuring all images are the same size and responsive */
+  .question-image {
+    width: 100%;
+    height: 180px; /* Setting a fixed height for uniformity */
+    object-fit: cover; /* Ensuring the image covers the area while maintaining aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Shrink the images for smaller screens */
+  @media (max-width: 1200px) {
+    .question-image {
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .question-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    .question-image {
+      height: 120px;
+    }
+  }
+  
+  .question-header h3 {
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+  }
+  
+  .question-details {
+    padding: 10px 0;
+    color: #555;
+  }
+  
+  .question-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hide-button,
+  .details-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .hide-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .details-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .details-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .hide-button:hover {
+    background-color: #c82333;
+  }
+  
