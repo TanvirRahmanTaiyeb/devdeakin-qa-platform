@@ -54,7 +54,7 @@ const FindQuestion = () => {
     setFilteredQuestions(updatedQuestions);
   };
 
-  // Handling hide question
+  // Handling the hide question feature
   const handleHideQuestion = (id) => {
     setFilteredQuestions((prevQuestions) =>
       prevQuestions.filter((q) => q.id !== id)
