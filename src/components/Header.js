@@ -20,7 +20,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate('/login'); // Redirect to login page after signing out
+        navigate('/login'); // Redirecting to login page after signing out
       })
       .catch((error) => {
         console.log('Sign out error:', error);
@@ -44,6 +44,13 @@ const Header = () => {
         {user && (
           <Menu.Item className="menu-item" name="find-question">
             <Link to="/find-question" className="header-link">Find Question</Link>
+          </Menu.Item>
+        )}
+
+        {/* Show "Plans" link when user is logged in */}
+        {user && (
+          <Menu.Item className="menu-item" name="plans">
+            <Link to="/plans" className="header-link">Plans</Link> {/* Link to the new Plans page */}
           </Menu.Item>
         )}
 

@@ -1,0 +1,43 @@
+form {
+  margin: 20px 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+div {
+  margin-top: 10px;
+  color: red;
+  text-align: center;
+}
+
+.payment-success {
+  font-size: 1.2rem;
+  color: #27ae60;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.StripeElement {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+}

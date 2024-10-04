@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebaseConfig'; // Correct import
+import { db, storage } from '../firebaseConfig';
 import './PostPage.css';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript'; // JavaScript mode for CodeMirror
+import 'codemirror/mode/htmlmixed/htmlmixed'; // HTML mode for CodeMirror
+import 'codemirror/mode/python/python'; // Python mode for CodeMirror
+import 'codemirror/mode/css/css'; // CSS mode for CodeMirror
+import ReactMarkdown from 'react-markdown'; // React-Markdown for rendering markdown
 
 const PostPage = () => {
   const [postType, setPostType] = useState('question');
@@ -12,40 +19,32 @@ const PostPage = () => {
   const [abstract, setAbstract] = useState('');
   const [articleText, setArticleText] = useState('');
   const [image, setImage] = useState(null);
+  const [code, setCode] = useState(''); // Code state for CodeMirror
+  const [language, setLanguage] = useState('javascript'); // Language state for selecting language mode
+  const [markdownContent, setMarkdownContent] = useState(''); // Markdown content state
 
   const handleSubmit = async () => {
-    console.log('Submit button clicked');
     try {
       let imageUrl = '';
-
       if (image) {
-        console.log('Image found, uploading...');
         const storageRef = ref(storage, `images/${image.name}`);
         const uploadTask = uploadBytesResumable(storageRef, image);
         imageUrl = await new Promise((resolve, reject) => {
           uploadTask.on(
             'state_changed',
-            (snapshot) => {
-              console.log('Upload in progress...');
-            },
-            (error) => {
-              console.error('Error uploading image:', error);
-              reject(error);
-            },
+            () => {},
+            (error) => reject(error),
             async () => {
               const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-              console.log('Image uploaded successfully, URL:', downloadURL);
               resolve(downloadURL);
             }
           );
         });
       }
 
-      // Adding current date when posting a question or article
       const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
 
-      console.log('Storing post in Firestore...');
-      const docRef = await addDoc(
+      await addDoc(
         collection(db, postType === 'question' ? 'questions' : 'articles'),
         {
           title,
@@ -53,12 +52,13 @@ const PostPage = () => {
           tags,
           abstract,
           articleText,
+          code, // Storing code if provided
           imageUrl,
-          date: currentDate, // Storing the current date
+          date: currentDate,
+          markdownContent, // Save the markdown content as well
         }
       );
 
-      console.log('Document written with ID: ', docRef.id);
       alert('Post created successfully!');
     } catch (e) {
       console.error('Error adding document: ', e);
@@ -120,6 +120,47 @@ const PostPage = () => {
               onChange={(e) => setTags(e.target.value)}
             />
           </div>
+
+          {/* Dropdown for selecting the code language */}
+          <div className="form-group">
+            <label htmlFor="languageSelect">Code Language</label>
+            <select id="languageSelect" onChange={(e) => setLanguage(e.target.value)} value={language}>
+              <option value="javascript">JavaScript</option>
+              <option value="htmlmixed">HTML</option>
+              <option value="python">Python</option>
+              <option value="css">CSS</option>
+            </select>
+          </div>
+
+          {/* CodeMirror for code input */}
+          <div className="form-group">
+            <label htmlFor="code">Code Snippet</label>
+            <CodeMirror
+              value={code}
+              options={{
+                mode: language, // Use selected language
+                theme: 'default',
+                lineNumbers: true,
+              }}
+              onBeforeChange={(editor, data, value) => setCode(value)}
+            />
+          </div>
+
+          {/* React-Markdown for previewing markdown */}
+          <div className="form-group">
+            <label htmlFor="markdownContent">Markdown Content</label>
+            <textarea
+              id="markdownContent"
+              placeholder="Write markdown content here"
+              value={markdownContent}
+              onChange={(e) => setMarkdownContent(e.target.value)}
+            />
+          </div>
+
+          <div className="markdown-preview">
+            <ReactMarkdown>{markdownContent}</ReactMarkdown>
+          </div>
+
         </div>
       ) : (
         <div className="article-form">

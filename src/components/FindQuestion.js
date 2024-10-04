@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import './FindQuestion.css'; // Importing the updated styles
+import ReactMarkdown from 'react-markdown'; // Import React-Markdown for rendering markdown
+import { Controlled as CodeMirror } from 'react-codemirror2'; // Importing CodeMirror
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript'; // or any other mode needed for the code snippet
 
 const FindQuestion = () => {
   const [questions, setQuestions] = useState([]);
@@ -13,7 +17,7 @@ const FindQuestion = () => {
     const fetchQuestions = async () => {
       const qCollection = collection(db, 'questions');
       const querySnapshot = await getDocs(qCollection);
-      const questionList = querySnapshot.docs.map(doc => ({
+      const questionList = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
@@ -121,6 +125,30 @@ const QuestionCard = ({ question, onHide }) => {
           <p>{question.description}</p>
           <p>Tags: {question.tags}</p>
           <p>Date: {question.date}</p>
+
+          {/* Display Code Snippet if available */}
+          {question.code && (
+            <div className="code-snippet">
+              <h4>Code Snippet</h4>
+              <CodeMirror
+                value={question.code}
+                options={{
+                  mode: 'javascript', // or dynamically change it based on stored mode, e.g., Python, CSS
+                  theme: 'default',
+                  lineNumbers: true,
+                  readOnly: true, // make it non-editable
+                }}
+              />
+            </div>
+          )}
+
+          {/* Display Markdown Content if available */}
+          {question.markdownContent && (
+            <div className="markdown-content">
+              <h4>Markdown Content</h4>
+              <ReactMarkdown>{question.markdownContent}</ReactMarkdown>
+            </div>
+          )}
         </div>
       )}
       <div className="question-actions">

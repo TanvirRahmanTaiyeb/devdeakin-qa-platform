@@ -107,3 +107,18 @@
       object-fit: contain;
   }
 }
+
+.code-snippet {
+  margin-top: 15px;
+}
+
+.markdown-content {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.question-details {
+  margin-top: 15px;
+}
