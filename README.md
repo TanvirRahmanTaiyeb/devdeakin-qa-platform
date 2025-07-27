@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# DevDeakin Q&A Platform – With Premium Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack Q&A platform built with **React**, **Firebase**, and **Stripe**. It allows users to sign up, log in, post questions or articles with code and Markdown, upload images, browse/search questions, and upgrade to a premium plan with Stripe integration.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Overview
+Originally developed as a university project, this application has been enhanced to demonstrate real-world features such as secure authentication, serverless data handling, and an integrated payment system for premium functionality.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
+- **User Authentication:** Secure login and registration using Firebase Authentication.
+- **Post Questions and Articles:** Create posts with tags, Markdown, and code snippets using CodeMirror.
+- **Image Uploads:** Store images in Firebase Storage for questions and articles.
+- **Search and Filter:** Find questions by title, tags, or date.
+- **Subscription Plans:** Dedicated page for Free and Premium plans.
+- **Stripe Payment Integration:** Secure checkout flow for premium upgrade (test mode).
+- **Responsive UI:** Built with Semantic UI React for a polished experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tech Stack
+- **Frontend:** React, React Router, Semantic UI React
+- **Backend/Serverless:** Firebase (Auth, Firestore, Storage)
+- **Payments:** Stripe (React Stripe.js, server.js backend integration)
+- **Other:** CodeMirror, React-Markdown, dotenv
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Screenshots
+*(Add your screenshots in a `/screenshots` folder and reference them here)*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Example:
+![Homepage](screenshots/home.png)
+![Post Question](screenshots/post.png)
+![Plans](screenshots/plans.png)
+![Stripe Payment](screenshots/payment.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and Setup
+To run this project locally:
 
-### `npm run eject`
+```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 2. Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 3. Configure environment variables
+# Create a .env file in the root directory and add:
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# 4. Start the development server
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+project-root/
+│
+├── public/
+├── src/
+│   ├── components/          # Reusable UI components
+│   ├── pages/               # Page components (Home, Plans, Payment, etc.)
+│   ├── firebaseConfig.js    # Firebase setup
+│   └── App.js
+│
+├── screenshots/             # Images for README
+├── .env.example             # Example environment variables
+├── server.js                # Stripe backend for payment integration
+├── README.md
+├── package.json
+└── package-lock.json
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
