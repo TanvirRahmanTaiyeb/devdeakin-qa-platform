@@ -29,19 +29,21 @@ This application was initially developed as part of an academic project and late
 ---
 
 ## Screenshots
-*(Place screenshots in the `/screenshots` folder and update the paths below)*
 
-Example:
-<img width="2532" height="1260" alt="image" src="https://github.com/user-attachments/assets/2d4ac92e-fe26-40b3-8b8c-efe99ba447c8" />
+### Homepage
+<img src="https://github.com/user-attachments/assets/2d4ac92e-fe26-40b3-8b8c-efe99ba447c8" width="600" />
 
-<img width="934" height="1252" alt="image" src="https://github.com/user-attachments/assets/45230cdf-8b13-4cbc-8a80-717fd4251ce2" />
+### Post Question Page
+<img src="https://github.com/user-attachments/assets/45230cdf-8b13-4cbc-8a80-717fd4251ce2" width="600" />
 
-<img width="2516" height="1221" alt="image" src="https://github.com/user-attachments/assets/713565de-3b90-4f34-80fb-de1c3aec59d3" />
+### Find Question Page
+<img src="https://github.com/user-attachments/assets/713565de-3b90-4f34-80fb-de1c3aec59d3" width="600" />
 
-<img width="1005" height="861" alt="image" src="https://github.com/user-attachments/assets/e22c5d47-1318-4b54-83cc-6e4b646b2388" />
+### Subscription Plan Page
+<img src="https://github.com/user-attachments/assets/e22c5d47-1318-4b54-83cc-6e4b646b2388" width="600" />
 
-<img width="1389" height="616" alt="image" src="https://github.com/user-attachments/assets/bdd6c957-04a6-45fd-a167-1494f002f451" />
-
+### Payment Page
+<img src="https://github.com/user-attachments/assets/bdd6c957-04a6-45fd-a167-1494f002f451" width="600" />
 
 ---
 
