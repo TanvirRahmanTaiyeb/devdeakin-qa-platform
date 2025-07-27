@@ -58,3 +58,25 @@ REACT_APP_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 # 4. Start the development server
 npm start
+```
+
+## Project Structure
+The project is organized as follows:
+
+```plaintext
+project-root/
+│
+├── public/
+├── src/
+│   ├── components/          # Reusable UI components
+│   ├── pages/               # Page components (Home, Plans, Payment, etc.)
+│   ├── firebaseConfig.js    # Firebase setup
+│   └── App.js
+│
+├── screenshots/             # Images for README
+├── .env.example             # Example environment variables
+├── server.js                # Stripe backend for payment integration
+├── README.md
+├── package.json
+└── package-lock.json
+
