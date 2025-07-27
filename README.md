@@ -45,8 +45,8 @@ To run this project locally:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/TanvirRahmanTaiyeb/devdeakin-qa-platform.git
+cd devdeakin-qa-platform
 
 # 2. Install dependencies
 npm install
@@ -99,12 +99,6 @@ project-root/
 - Covers authentication, payment integration, and real-time data handling.
 - Implements secure, scalable architecture using serverless services.
 - Highlights ability to create a responsive and user-friendly interface.
-
----
-
-## Live Demo
-*(Deploy via Vercel or Netlify and include your link here)*  
-Example: [Live Demo](https://your-deployment-link.com)
 
 ---
 
