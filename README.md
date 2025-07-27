@@ -1,45 +1,46 @@
 # DevDeakin Q&A Platform – With Premium Features
 
-This is a full-stack Q&A platform built with **React**, **Firebase**, and **Stripe**. It allows users to sign up, log in, post questions or articles with code and Markdown, upload images, browse/search questions, and upgrade to a premium plan with Stripe integration.
+A full-stack Q&A platform built using **React**, **Firebase**, and **Stripe**. It allows users to sign up, log in, create posts with Markdown and code snippets, upload images, browse/search questions, and upgrade to a premium plan using Stripe payment integration.
 
 ---
 
 ## Overview
-Originally developed as a university project, this application has been enhanced to demonstrate real-world features such as secure authentication, serverless data handling, and an integrated payment system for premium functionality.
+This application was initially developed as part of an academic project and later enhanced to demonstrate real-world functionality. The app integrates **secure authentication**, **cloud-based data storage**, and a **subscription payment system** to create a functional and scalable platform.
 
 ---
 
 ## Key Features
-- **User Authentication:** Secure login and registration using Firebase Authentication.
-- **Post Questions and Articles:** Create posts with tags, Markdown, and code snippets using CodeMirror.
-- **Image Uploads:** Store images in Firebase Storage for questions and articles.
-- **Search and Filter:** Find questions by title, tags, or date.
+- **User Authentication:** Login and registration with Firebase Authentication.
+- **Create Posts:** Add questions or tutorials with Markdown support and code syntax highlighting using CodeMirror.
+- **Image Uploads:** Attach images to posts using Firebase Storage.
+- **Search & Filter:** Browse questions by title, tags, or date.
 - **Subscription Plans:** Dedicated page for Free and Premium plans.
-- **Stripe Payment Integration:** Secure checkout flow for premium upgrade (test mode).
-- **Responsive UI:** Built with Semantic UI React for a polished experience.
+- **Stripe Integration:** Secure checkout for upgrading to premium (test mode).
+- **Responsive UI:** Designed with Semantic UI React for a clean, user-friendly interface.
 
 ---
 
 ## Tech Stack
 - **Frontend:** React, React Router, Semantic UI React
-- **Backend/Serverless:** Firebase (Auth, Firestore, Storage)
-- **Payments:** Stripe (React Stripe.js, server.js backend integration)
-- **Other:** CodeMirror, React-Markdown, dotenv
+- **Backend / Serverless:** Firebase (Auth, Firestore, Storage)
+- **Payments:** Stripe (React Stripe.js + Express server)
+- **Additional Libraries:** CodeMirror, React-Markdown, dotenv
 
 ---
 
 ## Screenshots
-*(Add your screenshots in a `/screenshots` folder and reference them here)*
+*(Place screenshots in the `/screenshots` folder and update the paths below)*
 
 Example:
 ![Homepage](screenshots/home.png)
-![Post Question](screenshots/post.png)
-![Plans](screenshots/plans.png)
-![Stripe Payment](screenshots/payment.png)
+![Post Page](screenshots/post.png)
+![Plans Page](screenshots/plans.png)
+![Payment](screenshots/payment.png)
 
 ---
 
 ## Installation and Setup
+
 To run this project locally:
 
 ```bash
@@ -58,6 +59,7 @@ REACT_APP_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 # 4. Start the development server
 npm start
+
 ```
 
 ## Project Structure
@@ -66,17 +68,48 @@ The project is organized as follows:
 ```plaintext
 project-root/
 │
-├── public/
+├── public/                      # Public assets
 ├── src/
-│   ├── components/          # Reusable UI components
-│   ├── pages/               # Page components (Home, Plans, Payment, etc.)
-│   ├── firebaseConfig.js    # Firebase setup
-│   └── App.js
+│   ├── components/              # UI components
+│   │   ├── Header.js            # Navigation bar
+│   │   ├── Footer.js            # Footer section
+│   │   ├── HeroImage.js         # Homepage banner
+│   │   ├── Login.js             # User login
+│   │   ├── Register.js          # User registration
+│   │   ├── PostPage.js          # Create new question/article
+│   │   ├── FindQuestion.js      # Browse and search questions
+│   │   ├── PlansPage.js         # Subscription plans
+│   │   ├── CheckoutForm.js      # Stripe payment form
+│   │   ├── ArticleCard.js       # Displays articles
+│   │   ├── TutorialCard.js      # Displays tutorials
+│   │   └── ...CSS files for styling
+│   ├── firebaseConfig.js        # Firebase initialization
+│   ├── App.js                   # Main app component
 │
-├── screenshots/             # Images for README
-├── .env.example             # Example environment variables
-├── server.js                # Stripe backend for payment integration
+├── server.js                    # Express server for Stripe integration
+├── .env.example                 # Example environment variables
 ├── README.md
 ├── package.json
 └── package-lock.json
+
+```
+
+## Why This Project is Valuable
+- Demonstrates full-stack development skills using modern technologies.
+- Covers authentication, payment integration, and real-time data handling.
+- Implements secure, scalable architecture using serverless services.
+- Highlights ability to create a responsive and user-friendly interface.
+
+---
+
+## Live Demo
+*(Deploy via Vercel or Netlify and include your link here)*  
+Example: [Live Demo](https://your-deployment-link.com)
+
+---
+
+## Disclaimer
+This project was originally developed as part of an academic learning exercise and later enhanced for demonstration purposes.  
+It is not intended for production use. All API keys and payment integrations (Stripe) are in **test mode only**.  
+Please do not use this project for handling real transactions.
 
