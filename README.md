@@ -5,7 +5,7 @@ A full-stack Q&A platform built using **React**, **Firebase**, and **Stripe**. I
 ---
 
 ## Overview
-This application was initially developed as part of an academic project and later enhanced to demonstrate real-world functionality. The app integrates **secure authentication**, **cloud-based data storage**, and a **subscription payment system** to create a functional and scalable platform.
+This application was initially developed as part of an academic project and later enhanced to showcase full-stack, real-world functionality. It integrates **secure authentication**, **cloud-based data storage**, **subscription-based payments**, and **email marketing automation** to deliver a functional, scalable, and user-friendly Q&A platform. Users can log in, create rich Markdown-based posts, upgrade to premium plans via Stripe, and subscribe to a developer newsletter powered by SendGrid.
 
 ---
 
@@ -16,6 +16,7 @@ This application was initially developed as part of an academic project and late
 - **Search & Filter:** Browse questions by title, tags, or date.
 - **Subscription Plans:** Dedicated page for Free and Premium plans.
 - **Stripe Integration:** Secure checkout for upgrading to premium (test mode).
+- **Newsletter Subscription:** Users can subscribe to updates via email using SendGrid API. Subscribed users receive a welcome email and are added to a managed contact list.
 - **Responsive UI:** Designed with Semantic UI React for a clean, user-friendly interface.
 
 ---
