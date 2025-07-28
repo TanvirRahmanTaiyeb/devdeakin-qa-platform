@@ -23,8 +23,9 @@ This application was initially developed as part of an academic project and late
 
 ## Tech Stack
 - **Frontend:** React, React Router, Semantic UI React
-- **Backend / Serverless:** Firebase (Auth, Firestore, Storage)
-- **Payments:** Stripe (React Stripe.js + Express server)
+- **Backend / Serverless:** Firebase (Authentication, Firestore, Storage)
+- **Payments:** Stripe (React Stripe.js + Express.js server)
+- **Email Services:** SendGrid (Transactional Emails & Newsletter API)
 - **Additional Libraries:** CodeMirror, React-Markdown, dotenv
 
 ---
