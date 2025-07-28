@@ -55,6 +55,7 @@ Watch a quick walkthrough of the DevDeakin Q&A Platform features:
 [![Watch the demo](https://img.youtube.com/vi/AcIcTJSyZPg/0.jpg)](https://youtu.be/AcIcTJSyZPg)
 
 > _Click the thumbnail above to open the video on YouTube._
+
 ---
 
 ## Installation and Setup
