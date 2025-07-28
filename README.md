@@ -60,10 +60,18 @@ cd devdeakin-qa-platform
 npm install
 
 # 3. Configure environment variables
-# Create a .env file in the root directory and add:
+# Create a .env file in the root directory and add the following:
+
+# Firebase Configuration
 REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
 REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+
+# Stripe Configuration
 REACT_APP_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+
+# SendGrid Configuration (used in server.js)
+SENDGRID_API_KEY=your_sendgrid_api_key
+SENDGRID_CONTACT_LIST_ID=your_sendgrid_contact_list_id
 
 # 4. Start the development server
 npm start
