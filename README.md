@@ -48,6 +48,15 @@ This application was initially developed as part of an academic project and late
 
 ---
 
+## 📽️ Demo Video
+
+Watch a quick walkthrough of the DevDeakin Q&A Platform features:
+
+[![Watch the demo](https://img.youtube.com/vi/AcIcTJSyZPg/0.jpg)](https://youtu.be/AcIcTJSyZPg)
+
+> _Click the thumbnail above to open the video on YouTube._
+---
+
 ## Installation and Setup
 
 To run this project locally:
