@@ -122,14 +122,6 @@ project-root/
 
 ```
 
-## Why This Project is Valuable
-- Demonstrates full-stack development skills using modern technologies.
-- Covers authentication, payment integration, and real-time data handling.
-- Implements secure, scalable architecture using serverless services.
-- Highlights ability to create a responsive and user-friendly interface.
-
----
-
 ## Disclaimer
 This project was originally developed as part of an academic learning exercise and later enhanced for demonstration purposes.  
 It is not intended for production use. All API keys and payment integrations (Stripe) are in **test mode only**.  
